@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at 60% 50%, #4a0000, #0a0000 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+/* BARRA LATERAL IZQUIERDA */
+.barra-lateral {
+    width: 80px;
+    background-color: #a63138;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    height: 100vh;
+    z-index: 20;
+    flex-shrink: 0; /* Evita que la barra se encoja */
+}
+
+.boton-menu {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* MENÚ DESPLEGABLE */
+.menu-desplegable {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(10, 0, 0, 0.95);
+    border-right: 2px solid #a63138;
+    padding: 100px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: left 0.4s ease;
+    z-index: 15;
+}
+
+.menu-desplegable.activo {
+    left: 80px;
+}
+
+.menu-desplegable a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.menu-desplegable a:hover {
+    color: #ff3333;
+}
+
+/* CONTENEDOR DE LA INTERFAZ */
+.container {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    position: relative;
+}
+
+/* CENTRADO ABSOLUTO DEL CONTENIDO */
+.content-section {
+    flex: 1;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Centra horizontalmente título y reproductor */
+    position: relative;
+    height: 100vh;
+    z-index: 5;
+}
+
+header h1 {
+    font-size: 4rem;
+    letter-spacing: 3px;
+    font-weight: 900;
+}
+
+header .number {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.4);
+    display: block;
+    margin-top: -5px;
+    text-align: center;
+}
+
+/* CAJA DEL REPRODUCTOR EN EL CENTRO VERTICAL */
+.player-container {
+    margin: auto 0; /* Centrado vertical exacto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.portada-album img {
+    width: 320px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* ONDAS ANIMADAS */
+.linea-tiempo {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin: 25px 0 15px 10px;
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+}
+
+.contenedor-onda {
+    display: flex;
+    width: 200%;
+    position: absolute;
+    left: 0;
+    height: 100%;
+}
+
+.onda-bucle {
+    width: 50%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 Q12.5,0 25,10 T50,10 T75,10 T100,10" fill="none" stroke="white" stroke-width="2"/></svg>');
+    background-size: 100px 100%;
+    animation: moverOnda 2s linear infinite;
+}
+
+@keyframes moverOnda {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100px); }
+}
+
+.linea-tiempo.pausado .onda-bucle {
+    animation-play-state: paused;
+}
+
+/* CONTROLES */
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.control-boton {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.control-play {
+    font-size: 2rem;
+    background: #ffffff;
+    color: #4a0000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* IMAGEN DE KENIA EN LA ESQUINA */
+.seccion-imagen {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 85vh;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+    pointer-events: none; /* Para que no tape los clics del fondo */
+}
+
+.seccion-imagen img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}

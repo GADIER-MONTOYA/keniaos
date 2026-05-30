@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KENIA OS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <audio id="reproductor-audio" src="kdekarma/Kenia Os - Belladona (SPOTISAVER).mp3"></audio>
+
+    <aside class="barra-lateral">
+        <button class="boton-menu" id="palanca-menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </aside>
+
+    <nav class="menu-desplegable" id="menu-navegacion">
+        <a href="https://www.sonymusic.com.mx/artist/kenia-os/" target="_blank">¿QUIEN ES KENIA OS?</a>
+        <a href="https://open.spotify.com/intl-es/artist/31VFEohvhOUKrtAONEBhMG/discography/all?edv=1" target="_blank">DISCOGRAFIA</a>
+        <a href="">EMPRESAS</a>
+        <a href="">REDES SOCIALES</a>
+    </nav>
+
+    <div class="container">
+        
+        <main class="content-section">
+            <header>
+                <h1>KENIA OS</h1>
+                <span class="number">40</span>
+            </header>
+
+            <div class="player-container">
+                <div class="portada-album">
+                    <img src="imagenes/VinilRojo.png" alt="Album Cover" id="imagen-portada">
+                </div>
+                
+                <div class="linea-tiempo">
+                    <div class="contenedor-onda">
+                        <span class="onda-bucle"></span>
+                        <span class="onda-bucle"></span>
+                    </div>
+                </div>
+
+                <div class="controles">
+                    <button class="control-boton" id="boton-anterior"><i class="fas fa-backward"></i></button>
+                    <button class="control-play" id="boton-reproducir"><i class="fas fa-pause" id="icono-control"></i></button>
+                    <button class="control-boton" id="boton-siguiente"><i class="fas fa-forward"></i></button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="seccion-imagen">
+            <img src="imagenes/KeniaOs.png" alt="Kenia Os">
+        </aside>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
