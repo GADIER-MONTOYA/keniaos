@@ -96,13 +96,7 @@ header h1 {
     font-weight: 900;
 }
 
-header .number {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.4);
-    display: block;
-    margin-top: -5px;
-    text-align: center;
-}
+
 
 /* CAJA DEL REPRODUCTOR EN EL CENTRO VERTICAL */
 .player-container {
