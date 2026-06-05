@@ -10,11 +10,10 @@ body {
     color: #ffffff;
     min-height: 100vh;
     display: flex;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 }
 
-/* BARRA LATERAL IZQUIERDA */
 .barra-lateral {
     width: 80px;
     background-color: #a63138;
@@ -35,7 +34,6 @@ body {
     cursor: pointer;
 }
 
-/* MENÚ DESPLEGABLE */
 .menu-desplegable {
     position: fixed;
     top: 0;
@@ -69,7 +67,6 @@ body {
     color: #ff3333;
 }
 
-/* CONTENEDOR DE LA INTERFAZ */
 .container {
     display: flex;
     flex: 1;
@@ -77,10 +74,9 @@ body {
     position: relative;
 }
 
-/* CENTRADO DEL CONTENIDO */
 .content-section {
     flex: 1;
-    padding: 60px;
+    padding: 40px 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -94,32 +90,39 @@ header h1 {
     font-size: 4rem;
     letter-spacing: 3px;
     font-weight: 900;
+    text-align: center;
 }
 
-
-
-/* CAJA DEL REPRODUCTOR EN EL CENTRO VERTICAL */
 .player-container {
     margin: auto 0; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.portada-album {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .portada-album img {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: auto;
     border-radius: 10px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
 }
 
-/* ONDAS ANIMADAS */
 .linea-tiempo {
     display: flex;
     align-items: center;
-    width: 300px;
-    margin: 25px 0 15px 10px;
+    width: 100%;
+    max-width: 300px;
+    margin: 25px 0 15px 0;
     height: 24px;
     overflow: hidden;
     position: relative;
@@ -150,13 +153,11 @@ header h1 {
     animation-play-state: paused;
 }
 
-/* CONTROLES */
 .controles {
     display: flex;
     align-items: center;
     gap: 30px;
     margin-top: 10px;
-    padding-left: 10px;
 }
 
 .control-boton {
@@ -182,7 +183,6 @@ header h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* IMAGEN DE LA KENIA */
 .seccion-imagen {
     position: absolute;
     right: 0;
@@ -199,4 +199,116 @@ header h1 {
     height: 100%;
     width: auto;
     object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 3rem;
+    }
+    .seccion-imagen {
+        height: 65vh;
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .barra-lateral {
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-top: 0;
+        padding-left: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .boton-menu {
+        font-size: 2rem;
+    }
+
+    .menu-desplegable {
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 60px);
+        padding: 40px 30px;
+        border-right: none;
+        border-bottom: 2px solid #a63138;
+    }
+
+    .menu-desplegable.activo {
+        left: 0;
+    }
+
+    .container {
+        flex-direction: column;
+        height: calc(100vh - 60px);
+        margin-top: 60px;
+    }
+
+    .content-section {
+        height: 100%;
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .portada-album img {
+        max-width: 260px;
+    }
+
+    .seccion-imagen {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 70vh;
+        justify-content: center;
+        opacity: 0.35;
+        z-index: 1;
+    }
+
+    .seccion-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .portada-album img {
+        max-width: 220px;
+    }
+
+    .controles {
+        gap: 20px;
+    }
+
+    .control-boton {
+        font-size: 2rem;
+    }
+
+    .control-play {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .seccion-imagen {
+        height: 60vh;
+    }
 }
