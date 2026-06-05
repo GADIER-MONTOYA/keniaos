@@ -195,6 +195,7 @@ header h1 {
 }
 
 .seccion-imagen img {
+    mask-image: linear-gradient(black 50%, transparent);
     height: 100%;
     width: auto;
     object-fit: contain;
